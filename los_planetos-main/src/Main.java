@@ -19,6 +19,8 @@ public class Main {
         Satellite lune = (Satellite) Factorycorpceleste.facto_cc(SATELLITE,moon);
         JSONObject phob = Tools.jsonFileToJsonObject("phobos.json");
         Satellite phobos = (Satellite) Factorycorpceleste.facto_cc(SATELLITE,phob);
+
+
         System.out.println(soleil.getName());
         terre.add_satellite(lune);
         mars.add_satellite(phobos);
@@ -29,12 +31,17 @@ public class Main {
         System.out.println(terre.distance(soleil));
         System.out.println(terre.getClass());
         System_s sol = new System_s("Systaire");
+        LanceurMeteorite lanceur = new LanceurMeteorite();
+        lanceur.position = new Position(9.00, 10.00);
+        sol.addCorp(lanceur.LaunchMeteorite(true,"jean-claude", terre));
+
         sol.addCorp(soleil);
         sol.addCorp(terre);
         sol.addCorp(lune);
         sol.addCorp(mars);
         sol.addCorp(phobos);
         sol.turnall(800);
+
 
 
     }

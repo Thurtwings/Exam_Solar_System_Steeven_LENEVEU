@@ -64,7 +64,7 @@ public class Satellite extends CorpsCeleste{
 
 
 
-        this.setRevolution_current(getRevolution_current()+hour_to_degre(24)) ;
+        this.setRevolution_current(getRevolution_current() + hour_to_degre(24));
 
         while(revolution_current>360){
             this.setRevolution_current(getRevolution_current()-360);

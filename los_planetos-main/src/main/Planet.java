@@ -11,8 +11,10 @@ public class Planet extends CorpsCeleste{
     private int distance_orbit;
     private int id_orbit;
 
+    public double securePerimeter = (double)getSize() *2;
 
-    public Planet() {
+    public Planet()
+    {
         super();
     }
 
@@ -82,18 +84,21 @@ public class Planet extends CorpsCeleste{
 
         //double rayon = (double)getDistance_orbit()/1000000;
 
-        this.setRevolution_current(getRevolution_current()+hour_to_degre(24))  ;
+        this.setRevolution_current(getRevolution_current()+hour_to_degre(24));
 
-        while(revolution_current>360){
+        while(revolution_current>360)
+        {
             this.setRevolution_current(getRevolution_current()-360);
         }
 
         double x = (double)getDistance_orbit() * Math.cos(Math.toRadians(revolution_current));
+
         double y = (double)getDistance_orbit() * Math.sin(Math.toRadians(revolution_current));
 
         this.setPosition(new Position(x,y));
 
-        for(Satellite s:satellites){
+        for(Satellite s:satellites)
+        {
             s.turn_s(this.getPosition());
         }
     }

@@ -2,9 +2,11 @@ package main;
 import org.json.JSONObject ;
 import java.awt.*;
 
-public class Factorycorpceleste {
+public class Factorycorpceleste
+{
 
-        public static CorpsCeleste facto_cc(Facto_enum en, JSONObject cc){
+        public static CorpsCeleste facto_cc(Facto_enum en, JSONObject cc)
+        {
 
             int id = cc.getInt("id");
             String name = cc.getString("name");
@@ -15,7 +17,8 @@ public class Factorycorpceleste {
 
 
 
-            switch (en){
+            switch (en)
+            {
                 case PLANET -> {
                     return new Planet(id,name,size,cc.getInt("revolution"),cc.getDouble("revolution_current"),cc.getInt("distance_orbit"),position, cc.getInt("id_orbit"));
                 }
